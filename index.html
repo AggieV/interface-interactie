@@ -18,7 +18,7 @@
 			<h1>De vriendschapsreis</h1>
 		</header>
 
-		<!-- 	
+		<!-- section 1	
 bommel en tom poes -->
 		<section>
 			<h2>bommel en tom poes</h2>
@@ -26,63 +26,142 @@ bommel en tom poes -->
 				<li><img src="images/bommel-en-tom-poes.png" alt="bommel-en-tom-poes"></li>
 				<li><img src="images/tompoes.png" alt="tom-poes"></li>
 			</ul> -->
-
+		</section>
 		</section>
 
 		<!-- 	
 landkaart -->
-		<section>
+		<!-- <section>
 			<h2>landkaart</h2>
 			<article>
 				<h2>Ontdek Heer Bommel en Tom Poes' hartverwarmende reis</h2>
 				<section class="map-container">
-					<img src="images/landkaart bommel.svg" alt="">
-					<!-- 	
+					<img src="images/landkaart bommel.svg" alt=""> -->
+		<!-- 	
 markers op landkaart -->
-					<span class="info-tonen-over-bos"></span>
-					<span></span>
-					<span></span>
-					<span></span>
+		<!-- <span class="info-tonen-over-bos" onclick="appear()"></span>
+					<span onclick="appear()"></span>
+					<span onclick="appear()"></span>
+					<span onclick="appear()"></span>
 				</section>
-			</article>
+			</article> -->
+		<!-- </section> -->
 
+		<!-- section 2	
+landkaart -->
+
+		<section class="map-container">
+			<img src="images/landkaart bommel.svg" alt="">
+			<!-- markers op landkaart -->
+			<span class="marker" data-index="0"></span>
+			<span class="marker" data-index="1"></span>
+			<span class="marker" data-index="2"></span>
+			<span class="marker" data-index="3"></span>
 		</section>
+
+		<!-- section 3	
+landkaart -->
+
+		<!-- <section class="overlay">
+			<h2>overlay-information</h2>
+			<div class="overlay-content">
+				<h3 class="marker-title"></h3>
+				<img class="marker-image" src="" alt="marker-image">
+				<p class="marker-text"></p>
+			</div>
+			<button class="close-button" onclick="disappear()"><img src="images/close-button.svg"
+					alt="close-button"></button>
+		</section> -->
+
 
 		<section class="overlay">
-			<h2>overlay</h2>
-			<div class="overlay-content"></div>
-			<!-- <section>
-				<h3>De toverpijp
-				</h3>
-				<img src="images/verhaal1.png" alt="verhaal1">
-				<p>Tom poes en Bommel ontmoeten elkaar lang geleden blablabla</p>
-			</section>>
+			<h2>overlay-information</h2>
+			<div class="overlay-content" id="marker-0">
+				<h3 class="marker-title">Donkere Bomen Bos</h3>
+				<img class="marker-image" src="images/verhaal1.png" alt="verhaal1">
+				<p class="marker-text">Tom Poes en Bommel ontmoeten elkaar in 1941, in het verhaal van de Toverpijp. Tom
+					Poes wandelt langs de Kale Driesprong, dat ligt tussen de Drie Kromme Sparren en Het Donkere Boomen
+					Bosch.
+				</p>
 
-			<section>
-				<h3>De betoverde prinses
-				</h3>
-				<img src="images/verhaal1.png" alt="verhaal1">
-				<p>Tom poes en Bommel ontmoeten elkaar lang geleden blablabla</p>
-			</section>>
+				<p class="marker-text">
+					Hij is op zoek naar avonturen en ineens komt hij een heer tegen in een geruite jas. Tom Poes denkt
+					gelijk dat de man een vreemdeling is omdat hij niet zo gauw iemand ziet in een geruite jas. Zo te
+					merken is de heer net als Tom Poes op zoek naar avontuur.</p>
 
-			<section>
-				<h3>Het mengeldier
-				</h3>
-				<img src="images/verhaal1.png" alt="verhaal1">
-				<p>Tom poes en Bommel ontmoeten elkaar lang geleden blablabla</p>
-			</section>>
+				<p class="marker-text">Als ze kennismaken lijken ze zich meteen op hun gemak te voelen bij elkaar. Tom
+					Poes mag de heer ‘heer Ollie’ noemen en Tom Poes noemt heer Ollie ‘jonge vriend’. Het volgende
+					moment gaan ze samen verder reizen en lijken meteen al een avontuur op het oog te hebben.</p>
+			</div>
 
-			<section>
-				<h3>De kniphoed?
-				</h3>
-				<img src="images/verhaal1.png" alt="verhaal1">
-				<p>Tom poes en Bommel ontmoeten elkaar lang geleden blablabla</p>
-			</section>> -->
+			<div class="overlay-content" id="marker-1">
+				<h3 class="marker-title">Rommeldam</h3>
+				<img class="marker-image" src="images/verhaal2.png" alt="verhaal2">
+				<p class="marker-text">Content for marker 1...</p>
+			</div>
 
+			<div class="overlay-content" id="marker-2">
+				<h3 class="marker-title">Bommelstein</h3>
+				<img class="marker-image" src="images/verhaal3.png" alt="verhaal3">
+				<p class="marker-text">Bommel valt en komt in de problemen. Bllalalalalalalalalalalaaaaalalalalalalallalalalalalalla</p>
+			</div>
 
-			<button class="overlay.sluit-informatie"><img src="images/close-button.svg" alt="close-button"></button>
+			<div class="overlay-content" id="marker-3">
+				<h3 class="marker-title">De Zwarte Bergen</h3>
+				<img class="marker-image" src="images/verhaal4.png" alt="verhaal4">
+				<p class="marker-text">Content for marker 3...</p>
+			</div>
+
+			<button class="close-button" onclick="disappear()"><img src="images/close-button.svg"
+					alt="close-button"></button>
 		</section>
 
+		<!-- <section class="overlay">
+			<h2>overlay-information</h2>
+			<div class="overlay-content">
+
+				<h3 class="marker-title">Donkere Bomen Bos</h3>
+				<img class="marker-image" src="images/verhaal1.png" alt="verhaal1">
+				<p class="marker-text">Tom Poes en Bommel ontmoeten elkaar in 1941, in het verhaal van de Toverpijp. Tom
+					Poes wandelt langs de
+					Kale Driesprong, dat ligt tussen de Drie Kromme Sparren en Het Donkere Boomen Bosch. Hij is op zoek
+					naar
+					avonturen en ineens komt hij een heer tegen in een geruite jas.</p>
+				<p class="marker-text">Tom Poes denkt gelijk dat de man een vreemdeling
+					is omdat hij niet zo gauw iemand ziet in een geruite jas. Zo te merken is de heer net als Tom Poes
+					op
+					zoek naar
+					avontuur.</p>
+				<p class="marker-text">Als ze kennismaken lijken ze zich meteen op hun gemak te voelen bij elkaar. Tom
+					Poes mag de heer ‘heer
+					Ollie’ noemen en Tom Poes noemt heer Ollie ‘jonge vriend’. Het volgende moment gaan ze samen verder
+					reizen en
+					lijken meteen al een avontuur op het oog te hebben.</p>
+			</div>
+			<button class="close-button" onclick="disappear()"><img src="images/close-button.svg"
+					alt="close-button"></button>
+
+		</section> -->
+
+		<!-- section 4	
+audio quotes van Bommel en Tom Poes -->
+		<section>
+			<h2>sounds</h2>
+			<ul>
+				<li> 
+					<button id="bommelButton"><img src="images/voice-bommel.png"></button>
+					<audio id="bommelAudio">
+						<source src="audio/bommel-quote.wav" type="audio/mpeg">
+					</audio>
+				</li>
+				<li>
+					<button id="tom-poesButton"><img src="images/voice-bommel.png"></button>
+					<audio id="tom-poesAudio">
+						<source src="audio/voicebooking-speech-bommel.wav" type="audio/mpeg">
+					</audio>
+				</li>
+			</ul>
+		</section>
 
 		<script src="scripts/script.js"></script>
 	</main>

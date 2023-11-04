@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function appear() {
+    document.getElementById("myElement").style.display = "block";
+}
+
+function disappear() {
+    document.getElementById("myElement").style.display = "none";
+}
+</script>
+</head>
+<body>
+
+<button onclick="appear()">Appear</button>
+<button onclick="disappear()">Disappear</button>
+
+<div id="myElement" style="display:none;">
+    This is the element that will appear and disappear.
+</div>
+
+</body>
+</html>
