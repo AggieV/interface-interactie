@@ -3,38 +3,43 @@
 /**************/
 
 /* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
-  margin:0;
+  margin: 0;
+  background-color: #d68f3a;
+  opacity: 0.8;
+  /* background-image: linear-gradient(red 1px, transparent 1px), linear-gradient(to right, red 1px, #d68f3a 1px);
+  background-size: 40px 40px; */
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 img {
-  max-width:100%;
+  max-width: 100%;
 }
-
-
-
-
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
-:root {
-  --color-headings:crimson
-  /* ... */
-
+@font-face {
+  font-family: 'Bulmer Bt Roman';
+  src: url('../fonts/BulmerBTRoman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
+:root {
+  --color-headings: darkblue;
 
-
+}
 
 
 /********************/
@@ -42,9 +47,267 @@ img {
 /********************/
 
 h1 {
-  color:var(--color-headings);
+  color: var(--color-headings);
+  font-family: 'Bulmer Bt Roman', sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2em;
+  margin-top: 1.5em;
+  /* white-space: wrap; */
 }
 
-/* ... */
+h2 {
+  display: none;
+}
+
+/*bommel en tom poes op voorgrond*/
+
+ul {
+  list-style-type: none;
+}
+
+section:first-of-type ul {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  top: 30em;
+  justify-content: space-between;
+  overflow: hidden;
+  /* Verberg overflow om items buiten beeld te knippen */
+  width: 150%;
+  /* Kies de gewenste breedte voor de flex-container */
+  z-index: 1;
+}
+
+section:first-of-type ul li:first-of-type {
+  position: relative;
+  left: -4em;
+  top: 0;
+}
+
+/*landkaart*/
+section:nth-of-type(2)  {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* section:nth-of-type(2) svg {
+  width: 100vw !important;
+  height: 100vh !important;
+  display: block;
+  margin: 0 auto;
+} */
+
+section:nth-of-type(2) img {
+  width: 95%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+section:nth-of-type(2) > section:first-of-type span {
+  position: absolute;
+  width: 5% !important;
+  aspect-ratio: 1 / 1;
+  border: 6px solid red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+section:nth-of-type(2) > section:first-of-type span::after {
+  position: absolute;
+  top: -1.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/*positie markers op landkaart*/
+
+section:nth-of-type(2) > section:first-of-type span:first-of-type {
+  top: 30%;
+  left: 20%;
+}
+
+section:nth-of-type(2) > section:first-of-type span:nth-of-type(2) {
+  top: 70%;
+  left: 45%;
+}
+
+section:nth-of-type(2) > section:first-of-type span:nth-of-type(3) {
+  top: 35%;
+  left: 70%;
+}
+
+section:nth-of-type(2) > section:first-of-type span:nth-of-type(4) {
+  top: 55%;
+  left: 85%;
+}
+
+/*content span, locaties op landkaart*/
+
+section:nth-of-type(2) > section:first-of-type span:hover::after {
+  background-color: rgba(127, 255, 212, 0.7);
+}
+
+section:nth-of-type(2) > section:first-of-type span:first-of-type:hover::after {
+  content: '1 Donkere Bomen Bos';
+}
+
+section:nth-of-type(2) > section:first-of-type span:nth-of-type(2):hover::after {
+  content: '2 Rommeldam';
+}
+
+section:nth-of-type(2) > section:first-of-type span:nth-of-type(3):hover::after {
+  content: '3 Bommelstein';
+}
+
+section:nth-of-type(2) > section:first-of-type span:nth-of-type(4):hover::after {
+  content: '4 De Zwarte Bergen';
+}
+
+/*overlay met informatie over elke plek*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-height: 80vh; */
+  overflow-y: auto;
+  display: none;
+  transition: opacity 2s ease, transform 2s ease;
+  z-index: 1;
+}
+
+.overlay-content {
+  position: fixed;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  /* max-width: calc(100vw - 2em);
+  max-height: calc(100vh - 2em);  */
+  /* width: 100%;
+  height: 100%; */
+  box-sizing: border-box;
+  margin: 2em;
+  max-height: 90vh;
+}
 
 
+/*openen en sluiten overlay*/
+
+.overlay.toon-informatie {
+  transform: translateY(0);
+  /* opacity: 1; */
+}
+
+.sluit-informatie {
+  transform: translateY(-100%);
+  cursor: pointer;
+}
+
+section:nth-of-type(3) button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*marker info styling*/
+
+.marker-title {
+  font-size: 28px;
+  top: 5em;
+  /* z-index: 1; */
+  /* margin-bottom: 10px; */
+  color: #333;
+  /* Change the color to your desired title text*/
+}
+
+.marker-image {
+  margin-top: 1em;
+  max-width: 100%;
+  margin-bottom: 1em;
+  width: 100vw;
+}
+
+.marker-text {
+  font-size: 18px;
+  color: #333;
+  /* color: blue; */
+  /* margin-bottom: 4em; */
+}
+
+/*voetsporen Bommel & Tom Poes*/
+
+section:nth-of-type(2) > section:nth-of-type(2) img:first-child {
+  position: fixed;
+  width: 1em;
+  transform: rotate(90deg);
+  top: 30%;
+  left: 28%;
+}
+
+section:nth-of-type(2) > section:nth-of-type(2) img:nth-child(2) {
+  position: fixed;
+  width: 1em;
+  transform: rotate(90deg);
+  top: 35%;
+  left: 28%;
+}
+
+
+/*voice buttons Bommel en Tom Poes*/
+
+section:nth-of-type(4) ul {
+  padding-bottom: 20em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: 1em;
+}
+
+section:nth-of-type(4) button {
+  width: 4em;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  border: none;
+}
+
+#bommelButton {
+  /* position: absolute; */
+  /* margin-left: 1em; */
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  border: none;
+}
+
+#tom-poesButton {
+  /* position: absolute; */
+  /* margin-right: 1em; */
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  border: none;
+}
+
+/*footer*/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #cda97a;
+  /* Set your desired background color */
+  padding: 10px 0;
+  /* Set your desired padding */
+  margin-top: -20em;
+}
